@@ -1,9 +1,5 @@
----
-title: 不许继承Application随时获取Android 的Context
-date: 2018-09-19 10:11:32
-tags:  
----
 
+## 不需要在Application#onCreate中初始化的Context获取工具类 ##
 
 
 相信 99% 的 `Android`  开发都遇到过，没有在`Manifest.xml` 声明指定的`Application` ，而导致一些需要在`Application#onCreate`  初始化传入 `Context` 的工具类发生空指针。
@@ -28,10 +24,10 @@ tags:
 
 Add it in your root build.gradle at the end of repositories:
 
-```css
+```groovy
 allprojects {
     repositories {
-        ...
+        //...
         maven { url 'https://jitpack.io' }
     }
 }
@@ -39,7 +35,7 @@ allprojects {
 
 **Step 2.** Add the dependency
 
-```css
+```groovy
 dependencies {
       implementation 'com.github.pdog18:current-application-util:1.0'
 }
