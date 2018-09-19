@@ -1,1 +1,1 @@
-fake-appliction
+fake-application
