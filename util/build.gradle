@@ -1,4 +1,25 @@
 apply plugin: 'java'
+apply plugin: 'com.novoda.bintray-release'
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.novoda:bintray-release:0.9'	// 0.9, 不是0.9.0
+    }
+}
+
+
+publish {
+    userOrg = 'pdog18'    //bintray.com用户名
+    groupId = 'com.pdog.util'    //jcenter上的路径
+    artifactId = 'context-util'    //自己的maven上添加的包名
+    publishVersion = '0.9.1'    //版本号
+    desc = 'current-application-util'    //描述
+    // 这里会用 ${url}.git 作为 vsc 管理，所以可以说挺重要
+    website = 'https://github.com/pdog18/current-application-util'
+}
+
 
 sourceCompatibility = "1.7"
 targetCompatibility = "1.7"
